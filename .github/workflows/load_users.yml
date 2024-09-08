@@ -1,0 +1,29 @@
+name: Load users
+
+on:
+  workflow_dispatch:
+    inputs:
+      github_organization:
+        description: 'GitHub Organization Name'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up Rust
+        uses: actions/setup-rust@v1
+        with:
+          rust-version: '1.80.1'
+
+      - name: Run Rust Program
+        run: cargo run --release
+        env:
+          GITHUB_ORGANIZATION: ${{ github.event.inputs.github_organization }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          ISSUES_API: https://api.morekudos.com
+          ISSUES_API_TOKEN: ${{ secrets.ISSUES_API_TOKEN }}
