@@ -96,6 +96,7 @@ async fn main() {
                         eprintln!("User already exists {}", member.login);
                     } else {
                         eprintln!("Failed to post data for member {}: {}", member.login, msg);
+                        process::exit(6);
                     }
                 }
                 Err(error) => {
@@ -103,7 +104,7 @@ async fn main() {
                         "Error reading response data for member: {:?}. Error: {:#?}",
                         member, error
                     );
-                    process::exit(6);
+                    process::exit(7);
                 }
             },
             Err(error) => {
@@ -111,7 +112,7 @@ async fn main() {
                     "Error posting data for member: {:?}. Error: {:#?}",
                     member, error
                 );
-                process::exit(7);
+                process::exit(8);
             }
         }
     }
