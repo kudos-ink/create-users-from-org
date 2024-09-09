@@ -33,5 +33,5 @@ jobs:
         env:
           GITHUB_ORGANIZATION: ${{ github.event.inputs.github_organization }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          ISSUES_API: https://api.morekudos.com
+          ISSUES_API: ${{ vars.ISSUES_API }}
           ISSUES_API_TOKEN: ${{ secrets.ISSUES_API_TOKEN }}
