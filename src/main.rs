@@ -1,4 +1,4 @@
-use std::{clone, process};
+use std::process;
 
 mod config;
 mod model;
@@ -6,7 +6,6 @@ mod model;
 use config::Configuration;
 use octocrab::Octocrab;
 use reqwest::Client;
-use tokio::time::{self, sleep};
 
 #[tokio::main]
 async fn main() {
@@ -55,7 +54,6 @@ async fn main() {
                 .page(page)
                 .send()
                 .await;
-            let _ = sleep(time::Duration::from_secs(1));
         } else {
             break;
         }
