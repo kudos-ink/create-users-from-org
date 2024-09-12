@@ -8,7 +8,7 @@ on:
         required: true
 
 jobs:
-  build:
+  load:
     runs-on: ubuntu-latest
 
     steps:
