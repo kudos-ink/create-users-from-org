@@ -5,6 +5,7 @@ use serde_derive::Serialize;
 pub struct User {
     pub username: String,
     pub avatar: String,
+    pub email: Option<String>,
 }
 
 #[derive(Deserialize, Debug)]

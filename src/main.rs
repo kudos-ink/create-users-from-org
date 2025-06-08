@@ -80,6 +80,7 @@ async fn main() {
         let user = &model::User {
             username: member.login.clone(),
             avatar: member.avatar_url.to_string(),
+            email: member.email.clone(),
         };
         println!("user {:?}", user);
         let response = client
