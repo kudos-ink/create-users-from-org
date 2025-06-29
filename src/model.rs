@@ -6,6 +6,7 @@ pub struct User {
     pub username: String,
     pub avatar: String,
     pub email: Option<String>,
+    pub github_id: i64
 }
 
 #[derive(Deserialize, Debug)]
