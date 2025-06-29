@@ -81,6 +81,7 @@ async fn main() {
             username: member.login.clone(),
             avatar: member.avatar_url.to_string(),
             email: member.email.clone(),
+            github_id: member.id.0 as i64,
         };
         println!("user {:?}", user);
         let response = client
